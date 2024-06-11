@@ -1,5 +1,6 @@
 # Example file showing a circle moving on screen
 import pygame
+import random
 
 # pygame setup
 pygame.init()
@@ -9,6 +10,11 @@ running = True
 dt = 0
 
 player_radius = 40
+
+def get_random(start, end):
+    return random.randrange(start, end)
+
+score_tile_pos = pygame.Vector2(get_random(0, screen.get_width()), get_random(0, screen.get_height()))
 
 player_one_pos = pygame.Vector2(screen.get_width() * 0.25, screen.get_height() / 2)
 player_two_pos = pygame.Vector2(screen.get_width() * 0.75, screen.get_height() / 2)
@@ -26,8 +32,11 @@ while running:
     # Player 1
     pygame.draw.circle(screen, "red", player_one_pos, player_radius)
 
-    # Play 2
+    # Player 2
     pygame.draw.circle(screen, "yellow", player_two_pos, player_radius)
+
+    # Score tile
+    pygame.draw.rect(screen, "white", pygame.Rect(score_tile_pos.x, score_tile_pos.y, 40, 40))
 
 
     # Player 1 controls
