@@ -7,4 +7,6 @@
 2 - ~~Create another ball~~
 3 - ~~Controllable w arrow keys~~
 
+4 - Use the distance formula for hitbox collision
+
 ### Sprint 2: Physics
